@@ -1,4 +1,4 @@
-# dp4_team2## Descripción del conjunto de datos
+# Descripción del conjunto de datos
 
 ### ¿Qué archivos necesito?
 
