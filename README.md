@@ -22,11 +22,11 @@ Imagina que se crea un modelo para detectar neumonía en radiografías de tórax
 
 # Equipo
 
-Cristian Marty, Andrés cervera, Eloy y Lucía Esteve
+Cristian Marty, Andrés Cervera, Eloy Martinez y Lucía Esteve
 
 
 
-# Descripción del conjunto de datos
+## Descripción del conjunto de datos
 
 ### ¿Qué archivos necesito?
 
