@@ -1,20 +1,28 @@
 
+# Data Project: Modelo Predictivo para Clasificar Radiografías
 
-El objetivo de este Data Project es entrenar un modelo predictivo capaz de determinar qué parte del cuerpo ha sido radiografiada. 
+## Descripción del Proyecto
 
-Clasificar una parte del cuerpo a partir de una imagen de rayos X puede parecer algo trivial, pero tenerlo automatizado puede ser clave para todo el sector del aprendizaje profundo en imágenes médicas. En muchos hospitales, cuando un médico solicita múltiples adquisiciones de imágenes, se crea un número de acceso para cada parte del cuerpo (p. ej., rodilla, tobillo y pierna), pero el registro de las imágenes correspondientes suele ser incorrecto dentro de cada número de acceso.
+El objetivo de este Data Project es entrenar un modelo predictivo capaz de determinar qué parte del cuerpo ha sido radiografiada. Clasificar una parte del cuerpo a partir de una imagen de rayos X puede parecer algo trivial, pero tenerlo automatizado puede ser clave para todo el sector del aprendizaje profundo en imágenes médicas.
 
-El registro incorrecto de partes del cuerpo en radiografías es un problema relevante, ya que si, por ejemplo, se desea extraer un dataset de rodilla utilizando el filtrado de PACS (base de datos donde se almacenan las imágenes medicas en un hospital) mediante la descripción del estudio, a menudo se extraerán imágenes con varias partes del cuerpo. Además, si se crea un modelo para clasificar enfermedades en alguna parte del cuerpo específica, la implementación del modelo en la práctica clínica será casi imposible. Por un lado, imagina que se crea un modelo para detectar neumonía en radiografías de tórax. Para implementar ese modelo, debemos asegurarnos de obtener solo radiografías de tórax. De lo contrario, podemos terminar tratando de diagnosticar una neumonía a partir de una radiografía de cráneo, lo que no tiene ningún sentido.
+En muchos hospitales, cuando un médico solicita múltiples adquisiciones de imágenes, se crea un número de acceso para cada parte del cuerpo (p. ej., rodilla, tobillo y pierna), pero el registro de las imágenes correspondientes suele ser incorrecto dentro de cada número de acceso.
 
-# Equipo
+## Importancia del Proyecto
 
-Cristian Marty, Andrés cervera, Eloy y Lucía Esteve
+El registro incorrecto de partes del cuerpo en radiografías es un problema relevante. Si, por ejemplo, se desea extraer un dataset de rodilla utilizando el filtrado de PACS (base de datos donde se almacenan las imágenes médicas en un hospital) mediante la descripción del estudio, a menudo se extraerán imágenes con varias partes del cuerpo. Además, si se crea un modelo para clasificar enfermedades en alguna parte del cuerpo específica, la implementación del modelo en la práctica clínica será casi imposible.
+
+Imagina que se crea un modelo para detectar neumonía en radiografías de tórax. Para implementar ese modelo, debemos asegurarnos de obtener solo radiografías de tórax. De lo contrario, podríamos terminar tratando de diagnosticar una neumonía a partir de una radiografía de cráneo, lo que no tiene ningún sentido.
+
+## Beneficios del Proyecto
+
+- **Automatización:** Ayuda a automatizar la clasificación de radiografías, mejorando la eficiencia en hospitales y centros médicos.
+- **Precisión:** Asegura que las imágenes estén correctamente registradas y clasificadas, evitando errores en el diagnóstico y tratamiento.
+- **Optimización de Modelos:** Facilita la implementación de modelos específicos de detección de enfermedades al asegurar la correcta clasificación de las imágenes.
 
 
+## Descripción del conjunto de datos
 
-# Descripción del conjunto de datos
-
-### ¿Qué archivos necesito?
+## ¿Qué archivos necesito?
 
 Necesitarás descargar una copia de las imágenes. Encontrarás dos directorios (train y test) que contienen archivos DICOM anonimizados.
 
@@ -24,7 +32,7 @@ También necesitarás las etiquetas de entrenamiento de train.csv y los nombres 
 
 Los datos de entrenamiento se proporcionan como un conjunto de SOPInstanceUIDs y sus etiquetas en csv. Las etiquetas se definen como una columna Target que contiene enteros que se asignan a diferentes partes del cuerpo.
 
-#### Imágenes DICOM
+### Imágenes DICOM
 
 Todas las imágenes proporcionadas están en formato DICOM.
 
@@ -68,3 +76,8 @@ Debe haber una columna de predicción por imagen, y las etiquetas se representan
 
 * SOPInstanceUID- Cada SOPInstanceUID corresponde a una imagen única.
 * Target - La etiqueta asignada a cada muestra.
+
+## Equipo
+
+Cristian Marty, Andrés Cervera, Eloy Martinez y Lucía Esteve
+
