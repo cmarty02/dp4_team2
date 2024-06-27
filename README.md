@@ -20,15 +20,9 @@ Imagina que se crea un modelo para detectar neumonía en radiografías de tórax
 - **Optimización de Modelos:** Facilita la implementación de modelos específicos de detección de enfermedades al asegurar la correcta clasificación de las imágenes.
 
 
-# Equipo
-
-Cristian Marty, Andrés Cervera, Eloy Martinez y Lucía Esteve
-
-
-
 ## Descripción del conjunto de datos
 
-### ¿Qué archivos necesito?
+## ¿Qué archivos necesito?
 
 Necesitarás descargar una copia de las imágenes. Encontrarás dos directorios (train y test) que contienen archivos DICOM anonimizados.
 
@@ -38,7 +32,7 @@ También necesitarás las etiquetas de entrenamiento de train.csv y los nombres 
 
 Los datos de entrenamiento se proporcionan como un conjunto de SOPInstanceUIDs y sus etiquetas en csv. Las etiquetas se definen como una columna Target que contiene enteros que se asignan a diferentes partes del cuerpo.
 
-#### Imágenes DICOM
+### Imágenes DICOM
 
 Todas las imágenes proporcionadas están en formato DICOM.
 
@@ -82,3 +76,8 @@ Debe haber una columna de predicción por imagen, y las etiquetas se representan
 
 * SOPInstanceUID- Cada SOPInstanceUID corresponde a una imagen única.
 * Target - La etiqueta asignada a cada muestra.
+
+## Equipo
+
+Cristian Marty, Andrés Cervera, Eloy Martinez y Lucía Esteve
+
