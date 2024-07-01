@@ -77,7 +77,4 @@ Debe haber una columna de predicción por imagen, y las etiquetas se representan
 * SOPInstanceUID- Cada SOPInstanceUID corresponde a una imagen única.
 * Target - La etiqueta asignada a cada muestra.
 
-## Equipo
-
-Cristian Marty, Andrés Cervera, Eloy Martinez y Lucía Esteve
 
