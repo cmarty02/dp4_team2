@@ -6,7 +6,7 @@ from modulo import get_x, get_y
 st.title('Clasificador de radiografías')
 
 # Cargar el modelo y mostrar un mensaje apropiado
-model_path = 'best_model_densenet_epsilon.pkl'
+model_path = 'best_model_densenet_lite.pkl'
 learner = load_model(model_path)
 if learner is not None:
     st.success("Modelo cargado exitosamente!")
@@ -18,14 +18,42 @@ def cargar_imagen(archivo):
     img = Image.open(archivo)
     return img
 
+partes_del_cuerpo = {
+    0: 'Abdomen',
+    1: 'Tobillo',
+    2: 'Columna cervical',
+    3: 'Tórax',
+    4: 'Clavículas',
+    5: 'Codo',
+    6: 'Pies',
+    7: 'Dedos',
+    8: 'Antebrazo',
+    9: 'Mano',
+    10: 'Cadera',
+    11: 'Rodilla',
+    12: 'Pierna',
+    13: 'Columna lumbar',
+    14: 'Otros',
+    15: 'Pelvis',
+    16: 'Hombro',
+    17: 'Senos paranasales',
+    18: 'Cráneo',
+    19: 'Muslo',
+    20: 'Columna torácica',
+    21: 'Muñeca'
+}
+
+
+
 def mostrar_prediccion(img):
-    """Función para mostrar la predicción utilizando el modelo cargado."""
     if learner is not None:
         pred, probs = predict_image(img, learner)
-        pred_desc = id.get(pred, "Clase desconocida")  # Uso del diccionario importado
-        return pred_desc, probs
+        pred = int(pred)  # Convertir la predicción a entero
+        parte_del_cuerpo = partes_del_cuerpo.get(pred, "Parte del cuerpo desconocida")
+        return parte_del_cuerpo, probs
     else:
-        return "Prediction Fail", {}
+        return "Fallo de predicción", {}
+
 
 archivo_subido = st.file_uploader("Sube una imagen de radiografía", type=["png", "jpg", "jpeg"])
 
