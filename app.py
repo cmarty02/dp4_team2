@@ -1,49 +1,21 @@
 import streamlit as st
 from PIL import Image
-from test import load_model, predict_image, id
+from functions import load_model, predict_image, partes_del_cuerpo 
 from modulo import get_x, get_y 
 
 st.title('Clasificador de radiografías')
 
 # Cargar el modelo y mostrar un mensaje apropiado
-model_path = 'best_model_densenet_lite.pkl'
+model_path = 'best_model_densenet.pkl'
 learner = load_model(model_path)
 if learner is not None:
     st.success("Modelo cargado exitosamente!")
 else:
     st.error("Fallo al cargar el modelo. Verifica la ruta y los permisos del archivo.")
 
-
 def cargar_imagen(archivo):
     img = Image.open(archivo)
     return img
-
-partes_del_cuerpo = {
-    0: 'Abdomen',
-    1: 'Tobillo',
-    2: 'Columna cervical',
-    3: 'Tórax',
-    4: 'Clavículas',
-    5: 'Codo',
-    6: 'Pies',
-    7: 'Dedos',
-    8: 'Antebrazo',
-    9: 'Mano',
-    10: 'Cadera',
-    11: 'Rodilla',
-    12: 'Pierna',
-    13: 'Columna lumbar',
-    14: 'Otros',
-    15: 'Pelvis',
-    16: 'Hombro',
-    17: 'Senos paranasales',
-    18: 'Cráneo',
-    19: 'Muslo',
-    20: 'Columna torácica',
-    21: 'Muñeca'
-}
-
-
 
 def mostrar_prediccion(img):
     if learner is not None:
